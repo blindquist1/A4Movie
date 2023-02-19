@@ -159,9 +159,11 @@ namespace A4Movie
                                     genresString = genresString.Replace("|", ", ");
 
                                     movies.Add(new Movie(movieId, movieTitle, genresString));
+    
+                                    Console.WriteLine();
 
-                                    // log transaction
-                                    //logger.Info("Movie id {Id} added", movieId);
+                                // log transaction
+                                //logger.Info("Movie id {Id} added", movieId);
                                 //}
                                 break;
                             }
@@ -172,7 +174,6 @@ namespace A4Movie
                             }
                     }
                     //Display the menu again
-                    Console.WriteLine();
                     menuInput = Movie.MainMenu();
                 }
                 //logger.Info("Program ended");
