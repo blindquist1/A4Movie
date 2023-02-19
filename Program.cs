@@ -92,7 +92,7 @@ namespace A4Movie
                 //logger.Info("Movies in file {Count}", MovieIds.Count);
 
 
-                //Switch statement to run various methods depending on menu option chosen
+                //Switch statement to run various cases depending on menu option chosen
                 while (menuInput != 3)
                 {
                     switch (menuInput)
