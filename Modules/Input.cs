@@ -49,7 +49,7 @@ namespace A4Movie.Modules
                 string userInput = Console.ReadLine();
                 userInput = userInput.ToUpper();
 
-                if (!String.IsNullOrEmpty(userInput) && userInput.Length == 1 && (userInput == "Y" || userInput == "N"))
+                if (!String.IsNullOrEmpty(userInput) && userInput.Length == 1)
                 {
                     userCharInput = userInput[0];
                     isChar = true;

@@ -109,17 +109,15 @@ namespace A4Movie
                                 string movieTitle = Input.GetStringWithPrompt("Enter movie title: ", "Entry must be text: ");
 
                                 // check for duplicate title
-                                //List<string> LowerCaseMovieTitles = MovieTitles.ConvertAll(t => t.ToLower());
-                                //List<Movie> LowerCaseMovieTitles = movies.ConvertAll(t => t.ToLower());
+                                List<Movie> LowerCaseMovieTitles = movies.Where(x => x.Title.ToLower() == movieTitle.ToLower()).ToList();
 
-                                //if (LowerCaseMovieTitles.Contains(movieTitle.ToLower()))
-                                //{
-                                //    Console.WriteLine("That movie has already been entered");
-                                //logger.Info("Duplicate movie title {Title}", movieTitle);
-                                //}
-                                //else
-                                //{
-
+                                if (LowerCaseMovieTitles.Count > 0)
+                                {
+                                    Console.WriteLine("That movie has already been entered");
+                                    //logger.Info("Duplicate movie title {Title}", movieTitle);
+                                }
+                                else
+                                {
                                     // generate movie id - use max Id value in movies list + 1
                                     UInt64 movieId = movies.Max(x => x.Id) + 1;
                                     // input genres
@@ -159,12 +157,11 @@ namespace A4Movie
                                     genresString = genresString.Replace("|", ", ");
 
                                     movies.Add(new Movie(movieId, movieTitle, genresString));
-    
-                                    Console.WriteLine();
-
-                                // log transaction
-                                //logger.Info("Movie id {Id} added", movieId);
-                                //}
+  
+                                    // log transaction
+                                    //logger.Info("Movie id {Id} added", movieId);
+                                }
+                                Console.WriteLine();
                                 break;
                             }
                         //Exit
