@@ -87,7 +87,7 @@ namespace A4Movie
                 catch (Exception ex)
                 {
                     //logger.Error(ex.Message);
-                    Console.Write("Error occured");
+                    Console.WriteLine(ex.Message);
                 }
                 //logger.Info("Movies in file {Count}", MovieIds.Count);
 
